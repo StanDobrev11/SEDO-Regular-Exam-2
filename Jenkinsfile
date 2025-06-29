@@ -23,7 +23,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'dotnet test --no-build --framework net6.0'
+                sh 'dotnet test --no-build --framework net8.0'
             }
         }
     }
