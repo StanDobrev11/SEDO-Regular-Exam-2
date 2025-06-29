@@ -1,0 +1,134 @@
+Started by an SCM change
+Obtained Jenkinsfile from git https://github.com/StanDobrev11/SEDO-Regular-Exam-2
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on TestAgent in /mnt/agent/workspace/RegExam
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Fetching changes from the remote Git repository
+Checking out Revision 5134d51169356af045ae8c1d536fc1396ce4588a (refs/remotes/origin/main)
+ > git rev-parse --resolve-git-dir /mnt/agent/workspace/RegExam/.git # timeout=10
+ > git config remote.origin.url https://github.com/StanDobrev11/SEDO-Regular-Exam-2 # timeout=10
+Fetching upstream changes from https://github.com/StanDobrev11/SEDO-Regular-Exam-2
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/StanDobrev11/SEDO-Regular-Exam-2 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 5134d51169356af045ae8c1d536fc1396ce4588a # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk 2ed272e7068b208ba908c687de9b7aacd5480844 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Fetching changes from the remote Git repository
+Checking out Revision 5134d51169356af045ae8c1d536fc1396ce4588a (refs/remotes/origin/main)
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+ > git rev-parse --resolve-git-dir /mnt/agent/workspace/RegExam/.git # timeout=10
+ > git config remote.origin.url https://github.com/StanDobrev11/SEDO-Regular-Exam-2 # timeout=10
+Fetching upstream changes from https://github.com/StanDobrev11/SEDO-Regular-Exam-2
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/StanDobrev11/SEDO-Regular-Exam-2 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 5134d51169356af045ae8c1d536fc1396ce4588a # timeout=10
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Restore Dependencies)
+[Pipeline] sh
++ dotnet restore
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ dotnet build --no-restore
+  Horizons.Data -> /mnt/agent/workspace/RegExam/Horizons.Data/bin/Debug/net8.0/Horizons.Data.dll
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(108,47): warning CS8600: Converting null literal or possible null value to non-nullable type. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(120,39): warning CS8600: Converting null literal or possible null value to non-nullable type. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(135,29): warning CS8601: Possible null reference assignment. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(218,33): warning CS8601: Possible null reference assignment. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+  Horizons -> /mnt/agent/workspace/RegExam/Horizons/bin/Debug/net8.0/Horizons.dll
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(102,51): warning CS8602: Dereference of a possibly null reference. [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(63,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(66,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(67,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(99,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(102,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(103,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/UnitTests.cs(134,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/Horizons.Tests.Unit.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/UnitTests.cs(81,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/Horizons.Tests.Unit.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/UnitTests.cs(109,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/Horizons.Tests.Unit.csproj]
+  Horizons.Tests.Unit -> /mnt/agent/workspace/RegExam/Horizons.Tests.Unit/bin/Debug/net8.0/Horizons.Tests.Unit.dll
+  Horizons.Tests.Integration -> /mnt/agent/workspace/RegExam/Horizons.Tests.Integration/bin/Debug/net8.0/Horizons.Tests.Integration.dll
+
+Build succeeded.
+
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(108,47): warning CS8600: Converting null literal or possible null value to non-nullable type. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(120,39): warning CS8600: Converting null literal or possible null value to non-nullable type. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(135,29): warning CS8601: Possible null reference assignment. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+/mnt/agent/workspace/RegExam/Horizons/Services/DestinationService.cs(218,33): warning CS8601: Possible null reference assignment. [/mnt/agent/workspace/RegExam/Horizons/Horizons.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(102,51): warning CS8602: Dereference of a possibly null reference. [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(63,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(66,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(67,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(99,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(102,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/IntegrationTests.cs(103,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Integration/Horizons.Tests.Integration.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/UnitTests.cs(134,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/Horizons.Tests.Unit.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/UnitTests.cs(81,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/Horizons.Tests.Unit.csproj]
+/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/UnitTests.cs(109,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [/mnt/agent/workspace/RegExam/Horizons.Tests.Unit/Horizons.Tests.Unit.csproj]
+    14 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:07.53
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] sh
++ dotnet test --no-build --framework net8.0
+Test run for /mnt/agent/workspace/RegExam/Horizons.Tests.Integration/bin/Debug/net8.0/Horizons.Tests.Integration.dll (.NETCoreApp,Version=v8.0)
+Test run for /mnt/agent/workspace/RegExam/Horizons.Tests.Unit/bin/Debug/net8.0/Horizons.Tests.Unit.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+VSTest version 17.11.1 (x64)
+
+
+Starting test execution, please wait...
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 1 s - Horizons.Tests.Integration.dll (net8.0)
+
+Passed!  - Failed:     0, Passed:     4, Skipped:     0, Total:     4, Duration: 1 s - Horizons.Tests.Unit.dll (net8.0)
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+Cleaning up...
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
